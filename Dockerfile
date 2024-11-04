@@ -6,10 +6,8 @@ RUN apt-get install maven -y
 
 WORKDIR /app
 
-# Copia o pom.xml primeiro
-COPY pom.xml .
-# Copia o resto dos arquivos do projeto
-COPY src ./src
+# Copia todo o conteúdo do projeto
+COPY . .
 
 # Executa o build
 RUN mvn clean install -DskipTests
